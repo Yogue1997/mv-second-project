@@ -11,11 +11,7 @@ function Home () {
 
     const api = "http://localhost:8000/api/products"; // local api
 
-    const url = "https://fakestoreapi.com/products"; // api from my previous project ( I am using it just to test axios)
-
     const [data , setData] = useState([]) // useState for my local api
-
-    const [test, setTest] = useState([]) // useState for the testing api
 
     const navigate = useNavigate() // I haven't used it yet
 
@@ -24,30 +20,54 @@ function Home () {
     const fetch = () => {
         axios.get(api)
             .then((res) => {
-                setData(res.data)
+                // console.log('data');
+                // console.log(res.data);
+                setData(res.data.products)
             })
     }
-    const fetchTEst = () => {
-        axios.get(url)
-            .then((res) => {
-                setTest(res.data)
-            })
+
+    const feTch = async () => {
+        const resp = await fetch(api)
+        const data = await resp.json()
+        console.log(data);
     }
+
+
 
 
     useEffect (() => {
         fetch()
-        fetchTEst()
     }, [])
 
-        console.log(data);
-        console.log(test);
+        // console.log(data);
+        // console.log(test);
+
+    const priceColor = {
+        color : "red"
+    }
+
+
+
+
+
 
 
     return (
+
         <>
             <div>
                 <h1>Home</h1>
+                {data.map(res => 
+                    <div onClick={() => navigate(`/view/:${res.id}`)} key={res.id}>
+                        <div >
+                            <p>Title : <strong >{res.title}</strong> </p>
+                            <img src={res.image} />
+                        </div>
+                        <h3>
+                            Price : $ <strong style={priceColor}>{res.price}</strong>
+                        </h3>
+                    </div>
+                )}
             </div>
         </>
     )
