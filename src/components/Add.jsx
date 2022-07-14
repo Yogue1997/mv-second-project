@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom"
 
 function Add () {
 
-        /* Didn't work */
+    /* Didn't work */
 
     // const [data, setData] = useState({
     //     title : "",
