@@ -7,14 +7,16 @@ import { useParams } from "react-router-dom"
 function View () {
 
     const params = useParams()
-
-    const id = params.id
-
+    console.log(params);
+    const id = params.id.slice(1);
+    console.log(id);
+    
     // const [def, setDef] = useState(id)
 
     const [product, setProduct] = useState([])
 
     console.log(product);
+
 
     const fetch = () => {
         const api = `http://localhost:8000/api/products/${id}`;

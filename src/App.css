@@ -1,15 +1,21 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Joan&family=Kdam+Thmor+Pro&family=Montserrat:wght@100&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    
 }
 
 #main-nav{
     display: flex;
     justify-content: space-between;
     text-align: center;
-    padding: 10px 20px;
+    padding: 40px 40px;
+    font-size: 30px;
+    background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    /* position: relative; */
 }
-
 .parent{
     display: flex;
 }
@@ -19,4 +25,21 @@
     text-decoration: none;
     text-align: center;
     margin-right: 10px;
+}
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0px;
+    font-family: "joan";
+    height: 40px;
+}
+
+#logo , ul, li{
+    font-family: "Joan";
+    color: white;
 }

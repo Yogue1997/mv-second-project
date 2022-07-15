@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* color: white; */
+}
+
+
+
+#mainAdmin{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+#adBtn{
+    padding: 10px 5px;
+    border-radius: 10px;
+    color: rgb(9, 31, 127);
+    background-color: rgb(25, 215, 47);
+}
+
+#adFrm{
+    display: flex;
+    justify-content: center;
+    /* width: 100%; */
+    align-items: center;
+    /* background-color: rgb(100, 29, 29); */
+    padding: 10px 0px;
+    /* margin-bottom: 100px; */
+    /* margin-bottom: 200px ; */
+}
+#final{
+    margin-bottom: 1rem;
+}
+
+
+
+.bdfrm{
+    font-size: 20px;
+    text-align: center;
+    color: aliceblue;
+}
+
+#frbtn{
+    margin-left: 20px;
+}
+.buttonAdm{
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+#divForm , #mainAdmin{
+    background-image: linear-gradient(to right, #8360c3, #2ebf91);
+}
+.input{
+    color: black;
+}
+
+
+.update{
+    background-color: #FF851B;
+}
+
+.delete{
+    background-color: #FF4136;
+}
+
+#Admin{
+    margin-bottom: 70px;
+    background-image: linear-gradient(to right, #8360c3, #2ebf91);
+    height: 40%;
+
+}

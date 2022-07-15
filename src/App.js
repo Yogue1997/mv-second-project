@@ -1,5 +1,6 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import './App.css';
+// import './css/Admin.css'
 import About from './components/About';
 import Home from './components/Home';
 import Admin from './components/Admin'
@@ -17,7 +18,7 @@ function App() {
 
   const stylingComp = {
     textDecoration: "none",
-    color: "aqua",
+    color: "black",
   };
 
 
@@ -25,15 +26,14 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <div id='main-nav'>
-        <Link to='/'> <p id='logo'>logo</p> </Link>
-        <ul className='parent' style={stylingComp}>
-          <Link to='/'><li className='children'>Home</li></Link>
-          <Link to='/about'><li className='children'>About</li></Link>
-          <Link to='admin'><li className='children'>Admin</li></Link>
+        <Link to='/' style={stylingComp}> <p id='logo'>logo</p> </Link>
+        <ul className='parent' >
+          <Link to='/' style={stylingComp}><li className='children'>Home</li></Link>
+          <Link to='/about' style={stylingComp}><li className='children'>About</li></Link>
+          <Link to='admin' style={stylingComp}><li className='children'>Admin</li></Link>
         </ul>
       </div>
         <Routes>
-          <Route path='/*' element={<PageNotFound />}/>
           <Route path='/' element={<Home />}/>
           {/* <Route path='/home' element={<Home />}/> */}
           <Route path='/about' element={<About />}/>
@@ -42,8 +42,10 @@ function App() {
           <Route path='/view/:id' element={<View />}/>
           <Route path='/update/:id' element={<Update />}/>
           <Route path='/delete/:id' element={<Delete />}/>
+          <Route path='/*' element={<PageNotFound />}/>
         </Routes>
       </BrowserRouter>
+      <footer>Multiverse Second project</footer>
     </div>
   );
 }

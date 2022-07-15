@@ -48,7 +48,7 @@ function Add () {
                 <label >Image</label>
                 <input type="text" id="image" placeholder="image link" onChange={(e) => setImage(e.target.value)}/>
             </form>
-            <button onClick={() => handleSubmit()}>Save</button>
+            <button onClick={handleSubmit}>Save</button>
             <button onClick={() => navigate('/admin')}>Cancel</button>
         </div>
     )
