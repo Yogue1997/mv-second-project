@@ -29,7 +29,7 @@ function Admin() {
             <div id="formAm">
                 <div id="mainAdmin">
                     <button onClick={() => navigate('/add')} id="adBtn">ADD</button>
-                    <h1 onClick={() => navigate('/')}>❌</h1>
+                    <h1 onClick={() => navigate('/')} id="x"></h1>
                 </div>
                 {admin.map(resp =>
                     <div key={resp.id} id="divForm">

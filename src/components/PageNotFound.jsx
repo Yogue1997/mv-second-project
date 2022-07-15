@@ -1,4 +1,4 @@
-
+import '../css/PageNotFound.css'
 
 
 function PageNotFound () {
@@ -7,7 +7,7 @@ function PageNotFound () {
 
 
     return (
-        <div>
+        <div id='pnf'>
             <h1> <strong> PAGE NOT FOUND </strong> </h1>
         </div>
     )

@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
+import '../css/Add.css'
 
 
 
-
-function Add () {
+function Add() {
 
     /* Didn't work */
 
@@ -28,28 +28,30 @@ function Add () {
     console.log(title);
 
     const handleSubmit = () => {
-        const credentials = {title, price, description, image}
+        const credentials = { title, price, description, image }
         axios.post(url, credentials)
             .then(res => {
                 navigate('/admin')
-            }) 
+            })
     }
 
 
     return (
-        <div>
+        <div id="mainAdd">
             <form>
-                <label>Title</label>
-                <input type="text" id="title" placeholder="title" onChange={(e) => setTitle(e.target.value)}/>
-                <label>Price</label>
-                <input type="text" id="price"  placeholder="price " onChange={(e) => setPrice(e.target.value)}/>
-                <label >Description</label>
-                <input type="text" id="description" placeholder="description" onChange={(e) => setDescription(e.target.value)}/>
-                <label >Image</label>
-                <input type="text" id="image" placeholder="image link" onChange={(e) => setImage(e.target.value)}/>
+                <label>Title : </label>
+                <input className="addInp" type="text" id="title" placeholder="title" onChange={(e) => setTitle(e.target.value)} />
+                <label>Price : </label>
+                <input className="addInp" type="text" id="price" placeholder="price " onChange={(e) => setPrice(e.target.value)} />
+                <label >Description : </label>
+                <input className="addInp" type="text" id="description" placeholder="description" onChange={(e) => setDescription(e.target.value)} />
+                <label >Image : </label>
+                <input className="addInp" type="text" id="image" placeholder="image link" onChange={(e) => setImage(e.target.value)} />
+                <div id="addMainBtn">
+                    <button className="mainAddComp addSave" onClick={handleSubmit}>Save</button>
+                    <button className="mainAddComp addCancel" onClick={() => navigate('/admin')}>Cancel</button>
+                </div>
             </form>
-            <button onClick={handleSubmit}>Save</button>
-            <button onClick={() => navigate('/admin')}>Cancel</button>
         </div>
     )
 }

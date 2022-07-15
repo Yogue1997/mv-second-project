@@ -1,17 +1,17 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import '../css/Home.css'
 
 
 
 
 
-
-function Home () {
+function Home() {
 
     const api = "http://localhost:8000/api/products"; // local api
 
-    const [data , setData] = useState([]) // useState for my local api
+    const [data, setData] = useState([]) // useState for my local api
 
     const navigate = useNavigate() // I haven't used it yet
 
@@ -35,15 +35,15 @@ function Home () {
 
 
 
-    useEffect (() => {
+    useEffect(() => {
         fetch()
     }, [])
 
-        // console.log(data);
-        // console.log(test);
+    // console.log(data);
+    // console.log(test);
 
     const priceColor = {
-        color : "red"
+        color: "red"
     }
 
 
@@ -55,13 +55,13 @@ function Home () {
     return (
 
         <>
-            <div>
-                <h1>Home</h1>
-                {data.map(res => 
-                    <div onClick={() => navigate(`/view/:${res.id}`)} key={res.id}>
+            <div id="homeProducts">
+                {/* <h1>Home</h1> */}
+                {data.map(res =>
+                    <div onClick={() => navigate(`/view/:${res.id}`)} key={res.id} className="homeChild">
                         <div >
-                            <p>Title : <strong >{res.title}</strong> </p>
-                            <img src={res.image} />
+                            <p id="title">Title : <strong >{res.title}</strong> </p>
+                            <img src={res.image} className="mainImage" />
                         </div>
                         <h3>
                             Price : $ <strong style={priceColor}>{res.price}</strong>

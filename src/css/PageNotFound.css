@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Joan&family=Kdam+Thmor+Pro&family=Montserrat:wght@100&display=swap');
+
+#pnf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 300px;
+    font-family: 'Kdam';
+}

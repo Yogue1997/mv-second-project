@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Joan&family=Kdam+Thmor+Pro&family=Montserrat:wght@100&display=swap');
+
+
+
+#updateMain{
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to right, #ff512f, #f09819);
+    margin-top: 5% 15%;
+    padding: 400px 0px;
+    font-family: 'joan';
+}
+
+#upFrm {
+    font-size: 40px;
+}
+
+.upInp{
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+#upBtnMain{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    justify-content: space-around;
+    /* font-size: 30px; */
+}
+
+.upBtn{
+    font-size: 20px;
+    border-radius: 1px;
+    box-shadow: 2px 3px;
+    font-family: 'joan';
+    padding: 10px;
+}

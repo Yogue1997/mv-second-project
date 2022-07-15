@@ -1,17 +1,17 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
+import '../css/View.css'
 
 
-
-function View () {
+function View() {
 
     const params = useParams()
-    console.log(params);
+    // console.log(params);
     const id = params.id.slice(1);
     console.log(id);
-    
-    // const [def, setDef] = useState(id)
+
+    const navigate = useNavigate()
 
     const [product, setProduct] = useState([])
 
@@ -21,31 +21,35 @@ function View () {
     const fetch = () => {
         const api = `http://localhost:8000/api/products/${id}`;
         axios.get(api)
-        .then((res) => {
-            // console.log(res.data.product);
-            setProduct(res.data.product)
-        })
+            .then((res) => {
+                // console.log(res.data.product);
+                setProduct(res.data.product)
+            })
     }
 
-    // const test = async () => {
-    //     const res = await fetch(api)
-    //     const data = await res.json()
-    //     // console.log(data);
-    // }j9
 
-    useEffect (() => {
+
+    useEffect(() => {
         fetch()
-        // test()
     }, [])
 
-    console.log(id);
-    // console.log(product);
+    const priceColor = {
+        color: "red",
+    };
 
 
 
     return (
         <div>
-            <p>test view</p>
+            <h1 id="xV" onClick={() => navigate('/')}>❌</h1>
+            <div className="vParent">
+                <div className="vChildren imgDiv">
+                    <img id="image" src={product.image} />
+                </div>
+                <h3 className="vChildren"> Title :  {product.title} </h3>
+                <p className="vChildren">Price : $<strong style={priceColor}>{product.price}</strong></p>
+                <p className="vChildren">{product.description}</p>
+            </div>
         </div>
     )
 }

@@ -15,8 +15,8 @@
 #adBtn{
     padding: 10px 5px;
     border-radius: 10px;
-    color: rgb(9, 31, 127);
-    background-color: rgb(25, 215, 47);
+    color: rgb(220, 220, 220);
+    background-color: rgb(24, 101, 33);
 }
 
 #adFrm{
@@ -59,10 +59,12 @@
 
 .update{
     background-color: #FF851B;
+    color: rgb(0, 0, 0);
 }
 
 .delete{
     background-color: #FF4136;
+    color: white;
 }
 
 #Admin{
@@ -70,4 +72,8 @@
     background-image: linear-gradient(to right, #8360c3, #2ebf91);
     height: 40%;
 
+}
+
+#adBtn:hover, #x:hover, .update:hover, .delete:hover{
+    cursor: pointer;
 }

@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Joan&family=Kdam+Thmor+Pro&family=Montserrat:wght@100&display=swap');
+
+
+.vParent{
+    margin-bottom: 200px;
+}
+
+#xV{
+    display: flex;
+    justify-content: end;
+    margin: 20px;
+}
+
+.vChildren{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'joan';
+    font-size: 150%;
+}
+
+#image{
+    width: 20%;
+}

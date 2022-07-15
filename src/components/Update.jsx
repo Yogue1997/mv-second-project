@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
+import '../css/Update.css'
+// import styled from 'styled-component'
 
 //update component
 function Update() {
@@ -50,11 +51,11 @@ function Update() {
                 navigate('/admin')
                 console.log("res", res);
             })
-            navigate('/admin')
+        navigate('/admin')
             .catch(error => {
-                console.log('err' , error.message);
+                console.log('err', error.message);
                 navigate("/admin");
-            }) 
+            })
     }
 
     useEffect(() => {
@@ -65,19 +66,22 @@ function Update() {
         setImage(data.image)
     }, [])
 
+
     return (
-        <div>
-            <form onSubmit={() => handleSubmit()}>
-                <label>Title</label>
-                <input type="text" placeholder="title" value={title} onChange={(e) => setTitle(e.target.value)} />
-                <label>Price</label>
-                <input type="text" placeholder="price" value={price} onChange={(e) => setPrice(e.target.value)} />
-                <label>Description</label>
-                <input type="text" placeholder="description" value={description} onChange={(e) => setDescription(e.target.value)} />
-                <label>Image</label>
-                <input type="text" placeholder="image link" value={image} onChange={(e) => setImage(e.target.value)} />
-                <button >Save</button>
-                <button onClick={() => navigate('/admin')}>Cancel</button>
+        <div id="updateMain" >
+            <form onSubmit={() => handleSubmit()} id="upFrm">
+                <label>Title : </label>
+                <input className="upInp" type="text" placeholder="title" value={title} onChange={(e) => setTitle(e.target.value)} />
+                <label>Price : </label>
+                <input className="upInp"  type="text" placeholder="price" value={price} onChange={(e) => setPrice(e.target.value)} />
+                <label>Description : </label>
+                <input className="upInp"  type="text" placeholder="description" value={description} onChange={(e) => setDescription(e.target.value)} />
+                <label>Image : </label>
+                <input className="upInp"  type="text" placeholder="image link" value={image} onChange={(e) => setImage(e.target.value)} />
+                <div id="upBtnMain">
+                    <button className="upBtn save" >Save</button>
+                    <button onClick={() => navigate('/admin')} className="upBtn cancel">Cancel</button>
+                </div>
             </form>
         </div>
     )
