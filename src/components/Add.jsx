@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
+import { toast } from "react-toastify";
 import '../css/Add.css'
 
 
@@ -31,7 +32,17 @@ function Add() {
         const credentials = { title, price, description, image }
         axios.post(url, credentials)
             .then(res => {
+                toast.success(`New item was successfuly added`, {
+                    position: "top-center",
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
                 navigate('/admin')
+                // console.log('res' , res);
             })
     }
 

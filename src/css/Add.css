@@ -31,4 +31,5 @@
 .mainAddComp{
     font-size: 25px;
     font-family: 'joan';
+    cursor: pointer;
 }
