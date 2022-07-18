@@ -41,7 +41,7 @@ function Add() {
                     draggable: true,
                     progress: undefined,
                 });
-                navigate('/admin')
+                // res.navigate('/admin')
                 // console.log('res' , res);
             })
     }
@@ -59,7 +59,10 @@ function Add() {
                 <label >Image : </label>
                 <input className="addInp" type="text" id="image" placeholder="image link" onChange={(e) => setImage(e.target.value)} />
                 <div id="addMainBtn">
-                    <button className="mainAddComp addSave" onClick={handleSubmit}>Save</button>
+                    <button className="mainAddComp addSave" onClick={() => {
+                        handleSubmit()
+                        navigate('/admin')
+                    }}>Save</button>
                     <button className="mainAddComp addCancel" onClick={() => navigate('/admin')}>Cancel</button>
                 </div>
             </form>

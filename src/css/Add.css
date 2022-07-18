@@ -12,7 +12,7 @@
     font-family: 'joan';
 }
 
-.addInp{
+.addInp, #title{
     font-size: 20px;
     align-items: center;
     padding: 5px 0px;

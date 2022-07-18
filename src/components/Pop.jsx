@@ -23,7 +23,8 @@ export default function Pop({ open, onClose, id, image, navigate }) {
                     draggable: true,
                     progress: undefined,
                 });
-                navigate('/admin')
+                window.location.reload(true);
+                // navigate('/admin')
             })
     }
 
